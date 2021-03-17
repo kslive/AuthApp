@@ -9,5 +9,7 @@ import Foundation
 
 enum Identifiers {
     static let storyboard = "AuthApp"
+    
     static let loginVC = "LoginVC"
+    static let pinVC = "PinVC"
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    private let viewManager = ViewManager.shared
     
     @IBOutlet var loginView: LoginView!
     
@@ -26,5 +27,7 @@ extension LoginViewController {
 extension LoginViewController: LoginViewProtocol {
     func pressedEye() {}
     
-    func pressedNext() {}
+    func pressedNext() {
+        viewManager.openPinVC(self)
+    }
 }

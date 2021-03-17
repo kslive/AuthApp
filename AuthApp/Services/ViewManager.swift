@@ -17,4 +17,14 @@ class ViewManager {
     func rootLoginViewController() -> UIViewController {
         return storyboard.instantiateViewController(identifier: Identifiers.loginVC ) as! LoginViewController
     }
+    
+    func rootPinViewController() -> UIViewController {
+        return storyboard.instantiateViewController(identifier: Identifiers.pinVC ) as! PinViewController
+    }
+    
+    func openPinVC(_ vc: UIViewController) {
+        let controller = storyboard.instantiateViewController(identifier: Identifiers.pinVC ) as! PinViewController
+        controller.modalPresentationStyle = .fullScreen
+        vc.present(controller, animated: true)
+    }
 }
