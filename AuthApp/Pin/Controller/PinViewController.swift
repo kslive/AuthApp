@@ -8,11 +8,12 @@
 import UIKit
 
 class PinViewController: UIViewController {
-
+    private let viewManager = ViewManager.shared
     @IBOutlet var pinView: PinView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
 }
 
@@ -25,5 +26,7 @@ extension PinViewController {
 extension PinViewController: PinViewProtocol {
     func pressedNumbers(_ sender: UIButton) {}
     
-    func pressedSkip() {}
+    func pressedSkip() {
+        viewManager.openProcessedVC(self)
+    }
 }

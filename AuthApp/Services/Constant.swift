@@ -12,4 +12,8 @@ enum Identifiers {
     
     static let loginVC = "LoginVC"
     static let pinVC = "PinVC"
+    static let rocessedVC = "ProcessedVC"
+    
+    static let processedCell = "ProcessedCell"
+    static let headerCell = "HeaderCell"
 }
