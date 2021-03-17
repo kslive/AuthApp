@@ -24,6 +24,9 @@
 		6B93E8792601FFB800BECCCA /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93E8772601FFB800BECCCA /* HeaderCell.swift */; };
 		6B93E87A2601FFB800BECCCA /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B93E8782601FFB800BECCCA /* HeaderCell.xib */; };
 		6B93E8832602008500BECCCA /* UIView + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93E8822602008500BECCCA /* UIView + Ext..swift */; };
+		6B93E88C260203A000BECCCA /* DetailProcessedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93E88B260203A000BECCCA /* DetailProcessedViewController.swift */; };
+		6B93E890260207D900BECCCA /* DetailProcessedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93E88F260207D900BECCCA /* DetailProcessedView.swift */; };
+		6B93E894260208FA00BECCCA /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93E893260208FA00BECCCA /* DetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		6B93E8772601FFB800BECCCA /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		6B93E8782601FFB800BECCCA /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		6B93E8822602008500BECCCA /* UIView + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext..swift"; sourceTree = "<group>"; };
+		6B93E88B260203A000BECCCA /* DetailProcessedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProcessedViewController.swift; sourceTree = "<group>"; };
+		6B93E88F260207D900BECCCA /* DetailProcessedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProcessedView.swift; sourceTree = "<group>"; };
+		6B93E893260208FA00BECCCA /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 				6B93E8502601E28500BECCCA /* Login */,
 				6B93E85E2601EC5100BECCCA /* Pin */,
 				6B93E8672601F27D00BECCCA /* Processed */,
+				6B93E8872602036F00BECCCA /* DetailProcessed */,
 				6B93E8352601DD1E00BECCCA /* AuthApp.storyboard */,
 				6B93E8382601DD2100BECCCA /* Assets.xcassets */,
 				6B93E83A2601DD2100BECCCA /* LaunchScreen.storyboard */,
@@ -196,6 +203,40 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		6B93E8872602036F00BECCCA /* DetailProcessed */ = {
+			isa = PBXGroup;
+			children = (
+				6B93E8892602038700BECCCA /* View */,
+				6B93E8882602037F00BECCCA /* Controller */,
+			);
+			path = DetailProcessed;
+			sourceTree = "<group>";
+		};
+		6B93E8882602037F00BECCCA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B93E88B260203A000BECCCA /* DetailProcessedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B93E8892602038700BECCCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B93E892260208ED00BECCCA /* Cell */,
+				6B93E88F260207D900BECCCA /* DetailProcessedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B93E892260208ED00BECCCA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B93E893260208FA00BECCCA /* DetailCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +311,7 @@
 				6B93E85C2601EACC00BECCCA /* ViewManager.swift in Sources */,
 				6B93E8832602008500BECCCA /* UIView + Ext..swift in Sources */,
 				6B93E8342601DD1E00BECCCA /* LoginViewController.swift in Sources */,
+				6B93E890260207D900BECCCA /* DetailProcessedView.swift in Sources */,
 				6B93E8652601ECA100BECCCA /* PinView.swift in Sources */,
 				6B93E8622601EC9600BECCCA /* PinViewController.swift in Sources */,
 				6B93E8792601FFB800BECCCA /* HeaderCell.swift in Sources */,
@@ -279,6 +321,8 @@
 				6B93E8322601DD1E00BECCCA /* SceneDelegate.swift in Sources */,
 				6B93E8522601E2EA00BECCCA /* LoginView.swift in Sources */,
 				6B93E84E2601E1EB00BECCCA /* Constant.swift in Sources */,
+				6B93E88C260203A000BECCCA /* DetailProcessedViewController.swift in Sources */,
+				6B93E894260208FA00BECCCA /* DetailCell.swift in Sources */,
 				6B93E86F2601FA8500BECCCA /* ProcessedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

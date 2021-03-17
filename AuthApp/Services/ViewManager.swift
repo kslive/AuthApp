@@ -29,8 +29,13 @@ class ViewManager {
     }
     
     func openProcessedVC(_ vc: UIViewController) {
-        let controller = storyboard.instantiateViewController(identifier: Identifiers.rocessedVC ) as! UINavigationController
+        let controller = storyboard.instantiateViewController(identifier: Identifiers.processedVC ) as! UINavigationController
         controller.modalPresentationStyle = .fullScreen
         vc.present(controller, animated: true)
+    }
+    
+    func pushDetailProcessedVC(_ nv: UINavigationController?) {
+        let controller = storyboard.instantiateViewController(identifier: Identifiers.detailProcessedViewController ) as! DetailProcessedViewController
+        nv?.pushViewController(controller, animated: true)
     }
 }

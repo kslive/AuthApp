@@ -9,6 +9,8 @@ import UIKit
 
 class ProcessedViewController: UIViewController {
     private let header = HeaderCell()
+    @IBOutlet var processedView: ProcessedView!
+    private let viewManager = ViewManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +33,9 @@ extension ProcessedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.processedCell, for: indexPath) as! ProcessedCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewManager.pushDetailProcessedVC(navigationController)
     }
 }
