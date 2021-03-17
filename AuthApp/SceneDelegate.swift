@@ -8,13 +8,17 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     private let viewManager = ViewManager.shared
+    private let userDefManager = UserDefManager.shared
+    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let controller = viewManager.rootLoginViewController()
-        makeRootScene(scene, for: controller)
+        if userDefManager.getAuthState() {
+            makeRootScene(scene, for: viewManager.rootPinViewController())
+        } else {
+            makeRootScene(scene, for: viewManager.rootLoginViewController())
+        }
     }
     
     private func makeRootScene(_ scene: UIScene, for controller: UIViewController) {

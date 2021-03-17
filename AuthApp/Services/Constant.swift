@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum UserDefKey {
+    static let auth = "AUTH"
+}
+
 enum Identifiers {
     static let storyboard = "AuthApp"
     
