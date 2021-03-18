@@ -37,8 +37,9 @@ class ViewManager {
         vc.present(controller, animated: true)
     }
     
-    func pushDetailProcessedVC(_ nv: UINavigationController?) {
+    func pushDetailProcessedVC(for number: Int?, _ nv: UINavigationController?) {
         let controller = storyboard.instantiateViewController(identifier: Identifiers.detailProcessedViewController ) as! DetailProcessedViewController
+        controller.number = number
         nv?.pushViewController(controller, animated: true)
     }
 }

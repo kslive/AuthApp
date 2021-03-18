@@ -65,6 +65,6 @@ extension ProcessedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewManager.pushDetailProcessedVC(navigationController)
+        viewManager.pushDetailProcessedVC(for: reports?[indexPath.section][indexPath.row].number, navigationController)
     }
 }

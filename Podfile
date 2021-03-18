@@ -6,5 +6,6 @@ target 'AuthApp' do
   use_frameworks!
 
   pod 'Moya'
+  pod 'IQKeyboardManager'
 
 end

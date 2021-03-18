@@ -35,6 +35,8 @@
 		6BD50BF426038B4700416224 /* ReportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD50BF326038B4700416224 /* ReportsModel.swift */; };
 		6BD50BFD26039E8900416224 /* Date + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD50BFC26039E8900416224 /* Date + Ext..swift */; };
 		6BD50C0026039F3400416224 /* Formatter + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD50BFF26039F3400416224 /* Formatter + Ext..swift */; };
+		6BD50C032603A58700416224 /* detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BD50C022603A58700416224 /* detail.json */; };
+		6BD50C072603A6BD00416224 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD50C062603A6BD00416224 /* DetailModel.swift */; };
 		8356E997E1EDCE577F5B1FD5 /* Pods_AuthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E5BB81026E7E526C87D6E2 /* Pods_AuthApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		6BD50BF326038B4700416224 /* ReportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsModel.swift; sourceTree = "<group>"; };
 		6BD50BFC26039E8900416224 /* Date + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext..swift"; sourceTree = "<group>"; };
 		6BD50BFF26039F3400416224 /* Formatter + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter + Ext..swift"; sourceTree = "<group>"; };
+		6BD50C022603A58700416224 /* detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = detail.json; sourceTree = "<group>"; };
+		6BD50C062603A6BD00416224 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		947CB94195A169A19ADB02AF /* Pods-AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.release.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.release.xcconfig"; sourceTree = "<group>"; };
 		9820DEA415B8021447097A51 /* Pods-AuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.debug.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +240,7 @@
 				6B93E8822602008500BECCCA /* UIView + Ext..swift */,
 				6BD50BFC26039E8900416224 /* Date + Ext..swift */,
 				6BD50BFF26039F3400416224 /* Formatter + Ext..swift */,
+				6BD50C022603A58700416224 /* detail.json */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 		6B93E8872602036F00BECCCA /* DetailProcessed */ = {
 			isa = PBXGroup;
 			children = (
+				6BD50C052603A6B200416224 /* Model */,
 				6B93E8892602038700BECCCA /* View */,
 				6B93E8882602037F00BECCCA /* Controller */,
 			);
@@ -296,6 +302,14 @@
 			isa = PBXGroup;
 			children = (
 				6BD50BF326038B4700416224 /* ReportsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BD50C052603A6B200416224 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BD50C062603A6BD00416224 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +385,7 @@
 				6B93E87A2601FFB800BECCCA /* Header.xib in Resources */,
 				6B93E83C2601DD2100BECCCA /* LaunchScreen.storyboard in Resources */,
 				6B93E8392601DD2100BECCCA /* Assets.xcassets in Resources */,
+				6BD50C032603A58700416224 /* detail.json in Resources */,
 				6B93E8372601DD1E00BECCCA /* AuthApp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +455,7 @@
 				6B93E8302601DD1E00BECCCA /* AppDelegate.swift in Sources */,
 				6B93E8732601FD0300BECCCA /* ProcessedCell.swift in Sources */,
 				6BD50BE72603802E00416224 /* NetworkManager.swift in Sources */,
+				6BD50C072603A6BD00416224 /* DetailModel.swift in Sources */,
 				6B93E8322601DD1E00BECCCA /* SceneDelegate.swift in Sources */,
 				6B93E8522601E2EA00BECCCA /* LoginView.swift in Sources */,
 				6B93E84E2601E1EB00BECCCA /* Constant.swift in Sources */,

@@ -32,4 +32,14 @@ enum ParametersKey {
 
 enum Constants {
     static let heightHeader: CGFloat = 40
+    
+    static let localFile = "detail"
+    static let staticNumberOfRows = 4
+}
+
+enum Text {
+    static let name = "Наименование ПД"
+    static let number = "Номер"
+    static let numberPD = "Номер ПД"
+    static let status = "Статус"
 }

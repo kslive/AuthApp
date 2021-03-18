@@ -1,22 +1,26 @@
 PODS:
   - Alamofire (5.4.1)
+  - IQKeyboardManager (6.5.6)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - Moya
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManager
     - Moya
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
 
-PODFILE CHECKSUM: aa64270eb9194b2c9ec3d989b812f941b4dfd692
+PODFILE CHECKSUM: 38f7553ec04411da17879ea57e333c6e6239b52f
 
 COCOAPODS: 1.10.0

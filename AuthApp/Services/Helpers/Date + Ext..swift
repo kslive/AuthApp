@@ -17,7 +17,7 @@ extension Date {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         guard let date = date else { return nil }
         if let date = dateFormatter.date(from: date) {
-            return "\(date.day) \(date.monthFull) \(date.year)"
+            return "\(date.day) \(date.monthFull) \(date.year)".uppercased()
         } else {
             return nil
         }
