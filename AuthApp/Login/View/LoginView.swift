@@ -29,10 +29,7 @@ class LoginView: UIView {
     }
     
     @IBAction func pressedNext(_ sender: UIButton) {
-        guard let password = passwordTF.text, let login = loginTF.text else {
-            print("Не Все Поля Заполнены")
-            return
-        }
+        guard let password = passwordTF.text, let login = loginTF.text else { return }
         delegate?.pressedNext(login: login, password: password)
     }
 }

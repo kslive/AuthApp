@@ -15,6 +15,7 @@ enum PinState {
 class PinViewController: UIViewController {
     private let viewManager = ViewManager.shared
     private let userDef = UserDefManager.shared
+    private let alertManager = AlertManager.shared
     
     @IBOutlet var pinView: PinView!
     var state: PinState = .new
@@ -48,6 +49,9 @@ extension PinViewController: PinViewProtocol {
             case .old:
                 if code == userDef.getPassword() {
                     viewManager.openProcessedVC(self)
+                } else if code.count == 4 {
+                    alertManager.showAlert(message: .errorPinCode, self)
+                    pinView.reloadElips()
                 }
             }
         }

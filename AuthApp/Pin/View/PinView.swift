@@ -51,6 +51,11 @@ extension PinView {
         }
     }
     
+    func reloadElips() {
+        code = ""
+        elipsImages.forEach({ $0.image = #imageLiteral(resourceName: "EmptyElipse") })
+    }
+    
     private func setElips(_ sender: UIButton) {
         guard let number = sender.titleLabel?.text else { return }
         switch code.count {

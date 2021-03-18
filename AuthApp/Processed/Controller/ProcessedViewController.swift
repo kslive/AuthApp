@@ -10,6 +10,7 @@ import UIKit
 class ProcessedViewController: UIViewController {
     private let networkManager = NetworkManager.shared
     private let viewManager = ViewManager.shared
+    private let alertManager = AlertManager.shared
     private let date = Date()
     private var reports:  [[ReportsModelElement]]?
     
@@ -28,13 +29,13 @@ extension ProcessedViewController {
     
     private func fetchData() {
         networkManager.reports { [weak self] reports in
-            guard let self = self,
-                let reports = reports else {
-                print("ERROR TOKEN")
-                return
+            guard let self = self else { return }
+            if let reports = reports {
+                self.reports = Array(Dictionary(grouping: reports, by: { $0.date! }).values)
+                self.processedView.tableView.reloadData()
+            } else {
+                self.alertManager.showAlert(message: .errorToken, self)
             }
-            self.reports = Array(Dictionary(grouping: reports, by: { $0.date! }).values)
-            self.processedView.tableView.reloadData()
         }
     }
 }
