@@ -478,6 +478,7 @@
                             <constraint firstItem="ss0-Tv-FU7" firstAttribute="top" secondItem="3rY-yd-7gD" secondAttribute="top" id="luS-Ot-lPM"/>
                         </constraints>
                         <connections>
+                            <outlet property="skipButton" destination="I4O-6y-iOt" id="qfA-CO-MN8"/>
                             <outletCollection property="elipsImages" destination="2vw-Qs-XqL" collectionClass="NSMutableArray" id="W1S-lA-ZEg"/>
                             <outletCollection property="elipsImages" destination="eWE-Mb-YQ7" collectionClass="NSMutableArray" id="90u-sQ-gJQ"/>
                             <outletCollection property="elipsImages" destination="YzF-Gj-7yT" collectionClass="NSMutableArray" id="gXG-a1-jan"/>

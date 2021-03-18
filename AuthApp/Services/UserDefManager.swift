@@ -13,6 +13,17 @@ class UserDefManager {
     
     private init() {}
     
+    func setPassword(code: String) {
+        core.setValue(code, forKey: UserDefKey.password)
+    }
+    
+    func getPassword() -> String {
+        if let code = core.object(forKey: UserDefKey.password) as? String {
+            return code
+        }
+        return ""
+    }
+    
     func setAuthState() {
         core.set(true, forKey: UserDefKey.auth)
     }

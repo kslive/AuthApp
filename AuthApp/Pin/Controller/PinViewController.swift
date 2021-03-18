@@ -7,11 +7,18 @@
 
 import UIKit
 
+enum PinState {
+    case new
+    case old
+}
+
 class PinViewController: UIViewController {
     private let viewManager = ViewManager.shared
+    private let userDef = UserDefManager.shared
     
     @IBOutlet var pinView: PinView!
-        
+    var state: PinState = .new
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -21,13 +28,26 @@ class PinViewController: UIViewController {
 extension PinViewController {
     private func setup() {
         pinView.delegate = self
+        setupState()
+    }
+    
+    private func setupState() {
+        pinView.setFor(state: state)
     }
 }
 
 extension PinViewController: PinViewProtocol {
-    func pressedNumbers(isEnd: Bool) {
+    func pressedNumbers(isEnd: Bool, for code: String) {
         if isEnd {
-            viewManager.openProcessedVC(self)
+            switch state {
+            case .new:
+                userDef.setPassword(code: code)
+                viewManager.openProcessedVC(self)
+            case .old:
+                if code == userDef.getPassword() {
+                    viewManager.openProcessedVC(self)
+                }
+            }
         }
     }
     

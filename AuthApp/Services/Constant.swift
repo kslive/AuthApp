@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefKey {
     static let auth = "AUTH"
+    static let password = "PASSWORD"
 }
 
 enum Identifiers {

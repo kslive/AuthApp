@@ -8,13 +8,22 @@
 import UIKit
 
 protocol PinViewProtocol: class {
-    func pressedNumbers(isEnd: Bool)
+    func pressedNumbers(isEnd: Bool, for code: String)
     func pressedSkip()
 }
 
 class PinView: UIView {
     @IBOutlet var elipsImages: [UIImageView]!
-    var code = ""
+    @IBOutlet weak var skipButton: UIButton!
+    var code = "" {
+        didSet {
+            if code.count == elipsImages.count {
+                delegate?.pressedNumbers(isEnd: true, for: code)
+            } else {
+                delegate?.pressedNumbers(isEnd: false, for: code)
+            }
+        }
+    }
     
     weak var delegate: PinViewProtocol?
     
@@ -24,11 +33,6 @@ class PinView: UIView {
     }
     
     @IBAction func pressedNumbers(_ sender: UIButton) {
-        if code.count >= 3 {
-            delegate?.pressedNumbers(isEnd: true)
-        } else {
-            delegate?.pressedNumbers(isEnd: false)
-        }
         setElips(sender)
     }
     
@@ -38,6 +42,15 @@ class PinView: UIView {
 }
 
 extension PinView {
+    func setFor(state: PinState) {
+        switch state {
+        case .new:
+            skipButton.isHidden = false
+        case .old:
+            skipButton.isHidden = true
+        }
+    }
+    
     private func setElips(_ sender: UIButton) {
         guard let number = sender.titleLabel?.text else { return }
         switch code.count {
@@ -52,7 +65,6 @@ extension PinView {
         default:
             break
         }
-        print(code)
     }
     
     private func updateElips(for index: Int, number: String) {
