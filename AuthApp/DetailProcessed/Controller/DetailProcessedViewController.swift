@@ -52,7 +52,7 @@ extension DetailProcessedViewController: UITableViewDelegate, UITableViewDataSou
         case 2:
             cell.setData(for: Text.numberPD, for: detail?.numberPD)
         case 3:
-            cell.setData(for: Text.numberPD, for: detail?.status)
+            cell.setData(for: Text.status, for: detail?.status)
         default:
             break
         }
