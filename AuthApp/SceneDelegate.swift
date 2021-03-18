@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if userDefManager.getAuthState() {
+        if !userDefManager.getToken().isEmpty {
             makeRootScene(scene, for: viewManager.rootPinViewController())
         } else {
             makeRootScene(scene, for: viewManager.rootLoginViewController())

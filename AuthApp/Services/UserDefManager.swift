@@ -13,8 +13,9 @@ class UserDefManager {
     
     private init() {}
     
-    func setPassword(code: String) {
+    func setPassword(code: String, _ isSet: (() -> ())?) {
         core.setValue(code, forKey: UserDefKey.password)
+        isSet?()
     }
     
     func getPassword() -> String {
@@ -24,14 +25,14 @@ class UserDefManager {
         return ""
     }
     
-    func setAuthState() {
-        core.set(true, forKey: UserDefKey.auth)
+    func setToken(token: String) {
+        core.set(token, forKey: UserDefKey.token)
     }
     
-    func getAuthState() -> Bool {
-        if let state = core.object(forKey: UserDefKey.auth) as? Bool {
-            return state
+    func getToken() -> String {
+        if let token = core.object(forKey: UserDefKey.token) as? String {
+            return token
         }
-        return false
+        return ""
     }
 }

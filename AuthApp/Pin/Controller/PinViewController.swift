@@ -41,8 +41,10 @@ extension PinViewController: PinViewProtocol {
         if isEnd {
             switch state {
             case .new:
-                userDef.setPassword(code: code)
-                viewManager.openProcessedVC(self)
+                userDef.setPassword(code: code) { [weak self] in
+                    guard let self = self else { return }
+                    self.viewManager.openProcessedVC(self)
+                }
             case .old:
                 if code == userDef.getPassword() {
                     viewManager.openProcessedVC(self)

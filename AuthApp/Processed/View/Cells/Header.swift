@@ -7,6 +7,6 @@
 
 import UIKit
 
-class HeaderCell: UITableViewCell {
+class Header: UITableViewCell {
     @IBOutlet weak var date: UILabel!
 }

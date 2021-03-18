@@ -18,3 +18,13 @@ class ProcessedCell: UITableViewCell {
         selectionStyle = .none
     }
 }
+
+extension ProcessedCell {
+    func setData(from data: ReportsModelElement?) {
+        guard let data = data else { return }
+        id.text = "\(data.number ?? 0)"
+        name.text = data.name
+        info.text = data.status
+        price.text = "\(data.sum ?? 0) ₽"
+    }
+}

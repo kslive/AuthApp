@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewProtocol: class {
-    func pressedNext()
+    func pressedNext(login: String, password: String)
 }
 
 class LoginView: UIView {
@@ -29,7 +29,11 @@ class LoginView: UIView {
     }
     
     @IBAction func pressedNext(_ sender: UIButton) {
-        delegate?.pressedNext()
+        guard let password = passwordTF.text, let login = loginTF.text else {
+            print("Не Все Поля Заполнены")
+            return
+        }
+        delegate?.pressedNext(login: login, password: password)
     }
 }
 

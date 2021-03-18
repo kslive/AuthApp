@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     private let viewManager = ViewManager.shared
     private let userDefManager = UserDefManager.shared
+    private let networkManager = NetworkManager.shared
     
     @IBOutlet var loginView: LoginView!
     
@@ -25,9 +26,15 @@ extension LoginViewController {
     }
 }
 
-extension LoginViewController: LoginViewProtocol {    
-    func pressedNext() {
-        userDefManager.setAuthState()
-        viewManager.openPinVC(self)
+extension LoginViewController: LoginViewProtocol {
+    func pressedNext(login: String, password: String) {
+        networkManager.auth(login: login, password: password) { [weak self] auth in
+            guard let self = self, let token = auth?.token else {
+                print("ERROR")
+                return
+            }
+            self.userDefManager.setToken(token: token)
+            self.viewManager.openPinVC(self)
+        }
     }
 }
